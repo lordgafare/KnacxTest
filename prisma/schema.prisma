@@ -15,7 +15,7 @@ model Patient {
   password   String   @db.VarChar(255)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  medical_record      MedicalRecord[]
+  medical_records      MedicalRecord[]
 
   @@map(name: "patients")
 }

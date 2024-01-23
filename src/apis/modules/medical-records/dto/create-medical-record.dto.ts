@@ -1,3 +1,4 @@
+import { Transform } from 'class-transformer';
 import { IsDate, IsInt, IsString, IsNotEmpty } from 'class-validator';
 
 export class CreateMedicalRecordDto {
@@ -7,6 +8,7 @@ export class CreateMedicalRecordDto {
 
   @IsNotEmpty()
   @IsDate()
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   date: Date;
 
   @IsNotEmpty()
